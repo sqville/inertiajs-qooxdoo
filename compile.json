@@ -1,0 +1,27 @@
+{
+  "$schema": "https://qooxdoo.org/schema/compile-1-0-0.json",
+  "targets": [
+    {
+        "type": "source",
+        "outputPath": "../../public/compiled/source"
+    },
+    {
+        "type": "build",
+        "outputPath": "../../public/compiled/build"
+    }
+  ],
+  "defaultTarget": "source",
+  "locales": ["en"],
+  "environment": {
+      "qx.icontheme": "Tango",
+      "qx.nativeScrollBars": true
+  },
+  "applications": [
+    {
+      "class": "qxapp.Application",
+      "theme": "qxapp.theme.Theme",
+      "name": "qxapp",
+      "bootPath": "source/boot"
+    }
+  ]
+}
