@@ -38,7 +38,7 @@ npx qx compile --watch
 
 Open the file located in the public/compiled/source/qxapp folder.
 Search the commonjs-browserify.js file for "require("axios")" (there should only be one).
-Add ".default" to the end for it to by "require("axios").default". Below is an illustration:
+Add ".default" to the end for it to be "require("axios").default". Below is an illustration:
 
 ```js
 // before
