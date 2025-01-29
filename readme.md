@@ -13,7 +13,8 @@ To get it working on a local instance:
 1. Setup Ping CRM
 2. Add a new folder named qxapp to the resources folder
 3. Add this application to the new qxapp folder
-4. Update the app.blade.php blade file (located in resources/views folder) to point to the compiled qxapp applicaition (see example below)
+4. Locally install the qooxdoo framework
+5. Update the app.blade.php blade file (located in resources/views folder) to point to the compiled qxapp applicaition (see example below)
 
 ```html
 {{-- Qooxdoo --}}
@@ -25,4 +26,10 @@ To get it working on a local instance:
     @inertia
 </body>
 </html>
+```
+
+6. Compile the qxapp application
+
+```sh
+npx qx compile --watch
 ```
