@@ -41,6 +41,8 @@ qx.Class.define("qxapp.pages.Reports", {
 
         getPageModelFirstRun() {
             return this.__pageModelFirstRun;
-        }
+        },
+
+        updatePageModels(data) {}
     }
   });

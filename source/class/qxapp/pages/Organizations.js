@@ -12,12 +12,15 @@ qx.Class.define("qxapp.pages.Organizations", {
     extend: qxapp.components.page.AbstractPage,
 
     construct(irouter, qxmsg) {
-      // Page header
+
+      // Page specific setup
       const pagenameroot = "organizations";
       const pageurl = `/${pagenameroot}`;
       const pageName = qx.lang.String.firstUp(pagenameroot);
       const pageNameSingle = pageName.slice(0, -1);
       const createlinkurl = `${pageurl}/create`;
+
+      // Initialize abstract page
       super(pageName, pageurl, true);
 
       // Flash Messages
@@ -44,7 +47,7 @@ qx.Class.define("qxapp.pages.Organizations", {
       // Table pagination
       var pagination = this._pagination = new qxapp.components.Pagination(irouter, qxmsg);
 
-      // bind Table and Pagination
+      // bind Table and Pagination status text
       pagination.bind("paginationStatusText", table, "additionalStatusBarText");
 
       // Search Filter and Create link on the same row

@@ -14,7 +14,7 @@ qx.Class.define("qxapp.pages.OrganizationDetails", {
     construct(irouter, qxmsg) {
       super();
 
-      // Page header
+      // Page specific setup
       const pagenameroot = "organizations";
       const pageurl = `/${pagenameroot}`;
       const pageName = qx.lang.String.firstUp(pagenameroot);
@@ -27,7 +27,7 @@ qx.Class.define("qxapp.pages.OrganizationDetails", {
       var breadcrumbContent = new qx.ui.container.Composite();
       breadcrumbContent.setLayout(new qx.ui.layout.HBox(10).set({alignY: "middle"}));
       var listlink = new qxapp.components.Link(`${pageName} /`, null, pageurl, irouter, qxmsg).set({allowGrowX: false});
-      var listitemname = this._listitemname = new qx.ui.basic.Label();
+      //var listitemname = this._listitemname = new qx.ui.basic.Label();
       var listitemorgname = new qx.ui.basic.Label();
       breadcrumbContent.add(listlink);
       breadcrumbContent.add(listitemorgname);

@@ -36,7 +36,6 @@ qx.Class.define("qxapp.views.TabView", {
       var users = new qxapp.pages.Users(irouter, qxmsg);
       var userdetails = new qxapp.pages.UserDetails(irouter, qxmsg);
 
-
       // Setup messaging and messaging functions
 
       // Login
@@ -47,7 +46,7 @@ qx.Class.define("qxapp.views.TabView", {
       }, this);
 
       // Dashboard
-      qxmsg.on("get", "/", this.__setmsgSimpleFunc(dashboard, appheader), this);
+      qxmsg.on("get", "/", this.__setmsgFunc(dashboard, appheader), this);
 
       // Organizations
       var orgsfunc = this.__setmsgFunc(organizations, appheader);
@@ -66,7 +65,7 @@ qx.Class.define("qxapp.views.TabView", {
       qxmsg.on("get", "/contacts/create", contactdetailsfunc, this);
 
       // Reports
-      qxmsg.on("get", "/reports", this.__setmsgSimpleFunc(reports, appheader), this);
+      qxmsg.on("get", "/reports", this.__setmsgFunc(reports, appheader), this);
 
       // Users
       var usersfunc = this.__setmsgFunc(users, appheader);
@@ -98,19 +97,6 @@ qx.Class.define("qxapp.views.TabView", {
             this.__authUserView(appheader);
             if (data.customData) {
                 target.updatePageModels(data.customData);
-                appheader.updateAuthUserInfo(data.customData);
-            }
-            this.setSelection([target]);
-          };
-
-        return func;
-    },
-
-    __setmsgSimpleFunc(target, appheader)
-    {
-        var func = (data) => {
-            this.__authUserView(appheader);
-            if (data.customData) {
                 appheader.updateAuthUserInfo(data.customData);
             }
             this.setSelection([target]);
@@ -157,7 +143,6 @@ qx.Class.define("qxapp.views.TabView", {
             }
           }
           pane.setSelection(value);
-          //this.scrollChildIntoView(button, null, null, false);
         } else {
           pane.resetSelection();
         }

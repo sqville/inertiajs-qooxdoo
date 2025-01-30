@@ -21,7 +21,6 @@ qx.Class.define("qxapp.pages.Dashboard", {
       // Set up the page
       this.setLabel(pageName);
       this.addListener("appear", () => {document.title = `${pageName} - Ping CRM Qooxdoo`});
-      //this.setLayout(new qx.ui.layout.Canvas());
       this.getChildrenContainer().setLayout(new qx.ui.layout.Canvas());
       this.setUserData("pageurl", pageurl);
       var pagebtnlink = this.getButton();
@@ -35,8 +34,6 @@ qx.Class.define("qxapp.pages.Dashboard", {
       var dashlabel = new qx.ui.basic.Label("Welcome to the Dashboard");
       pageContent.add(dashlabel);
       this.getChildrenContainer().add(pageContent, { edge: 0 });
-      //this.add(pageContent, { edge: 0 });
-      //this.add(pageContent);
     },
 
     members: {
@@ -45,6 +42,8 @@ qx.Class.define("qxapp.pages.Dashboard", {
 
         getPageModelFirstRun() {
             return this.__pageModelFirstRun;
-        }
+        },
+
+        updatePageModels(data) {}
     }
   });

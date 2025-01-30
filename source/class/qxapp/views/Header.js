@@ -17,7 +17,7 @@ qx.Class.define("qxapp.views.Header", {
     this.getLayout().setAlignY("middle");
 
     // Add Logo here
-    var title = new qx.ui.basic.Label("Ping CRM");
+    var title = new qx.ui.basic.Label("Ping CRM").set({ marginLeft: 10});
 
     // Logged in users Organization
     this.__orglabel = new qx.ui.basic.Label("Org Name");
