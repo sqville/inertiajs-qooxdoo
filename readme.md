@@ -36,9 +36,11 @@ npx qx compile --watch
 
 7. Update the compiled commonjs-browserify.js to properly reference inertiajs axios object
 
-Open the file located in the public/compiled/source/qxapp folder.
-Search the commonjs-browserify.js file for "require("axios")" (there should only be one).
-Add ".default" to the end for it to be "require("axios").default". Below is an illustration:
+* Open the file located in the public/compiled/source/qxapp folder.
+* Search the commonjs-browserify.js file for "require("axios")" (there should only be one).
+* Add ".default" to the end for it to be "require("axios").default". Below is an illustration:
+
+**Important Note:** You will have to repeat step 7 after every run of ```npx qx clean```.
 
 ```js
 // before
