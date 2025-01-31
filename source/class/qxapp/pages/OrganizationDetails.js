@@ -81,7 +81,12 @@ qx.Class.define("qxapp.pages.OrganizationDetails", {
       var deletebutton = this._deletebutton = new qx.ui.form.Button(`Delete ${pageNameSingle}`);
       form.addButton(deletebutton);
       form.addButton(submitbutton);
-      //submitbutton.setEnabled(false);
+
+      var titleupdatefunc = () => {
+        document.title = `${orgname.getValue()} - Ping CRM Qooxdoo`;
+      };
+
+      orgname.addListener("changeValue", titleupdatefunc);
 
       // form validator
       var validator = this._formvalidator = form.getValidationManager();

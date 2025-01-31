@@ -93,6 +93,13 @@ qx.Class.define("qxapp.pages.ContactDetails", {
       form.addButton(deletebutton);
       form.addButton(submitbutton);
 
+      var titleupdatefunc = () => {
+        document.title = `${firstname.getValue()} ${lastname.getValue()} - Ping CRM Qooxdoo`;
+      };
+
+      firstname.addListener("changeValue", titleupdatefunc);
+      lastname.addListener("changeValue", titleupdatefunc);
+
       // form validator
       var validator = this._formvalidator = form.getValidationManager();
       validator.add(email, qx.util.Validate.email());
