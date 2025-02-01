@@ -27,6 +27,7 @@ qx.Class.define("qxapp.pages.Reports", {
       pagebtnlink.getContentElement().setNodeName("a");
       pagebtnlink.getContentElement().setAttribute("href", pageurl);
       pagebtnlink.addListener("click", (e) => {e.preventDefault()});
+      pagebtnlink.setNativeContextMenu(true);
 
       // add controls to the page
       var pageContent = new qx.ui.container.Composite();

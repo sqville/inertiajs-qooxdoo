@@ -27,6 +27,7 @@ qx.Class.define("qxapp.pages.Dashboard", {
       pagebtnlink.getContentElement().setNodeName("a");
       pagebtnlink.getContentElement().setAttribute("href", pageurl);
       pagebtnlink.addListener("click", (e) => {e.preventDefault()});
+      pagebtnlink.setNativeContextMenu(true);
 
       // Add page content
       var pageContent = new qx.ui.container.Composite();

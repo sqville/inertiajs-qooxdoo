@@ -69,7 +69,7 @@ qx.Class.define("qxapp.Application",
       this.getRoot().add(doccomp, { edge: 0 });
 
       // Show controls based on the current url
-      //  (see TabView for configured qxmsg listeners)
+      // (see TabView for configured qxmsg listeners)
       qxmsg.emit("get", InitialPage.url, null, InitialPage);
     },
 

@@ -1,3 +1,8 @@
+/**
+ * TODOS:
+ * 1. Enable right click, context window, open in a new browser tab/window
+ *
+ */
 qx.Class.define("qxapp.components.Table", {
     extend: qx.ui.table.Table,
 
@@ -9,7 +14,6 @@ qx.Class.define("qxapp.components.Table", {
         // columnWidths []
         // noresultsLabel string
 
-        //if (tableConfig.noresultsLabel)
         this.setUserData("noresultslabel", tableConfig.noresultsLabel ?? "table items");
 
         var model = new qx.ui.table.model.Simple();

@@ -27,6 +27,7 @@ qx.Class.define("qxapp.components.page.AbstractPage", {
         pagebtnlink.getContentElement().setNodeName("a");
         pagebtnlink.getContentElement().setAttribute("href", pageurl);
         pagebtnlink.addListener("click", (e) => {e.preventDefault()});
+        pagebtnlink.setNativeContextMenu(true);
       } else {
         pagebtnlink.set({ visibility: "excluded" });
       }
