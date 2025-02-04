@@ -40,7 +40,7 @@ qx.Class.define("qxapp.components.Pagination", {
                                 this.__irouter.get(links[i].url, {}, {
                                     onSuccess : (NextPage) => {
                                         if (NextPage.props.auth.user) {
-                                            this.__irouter.initqxpg(NextPage);
+                                            //this.__irouter.initqxpg(NextPage);
                                             this.__qxmsg.emit("get", NextPage.url, null, NextPage);
                                         }
                                     }

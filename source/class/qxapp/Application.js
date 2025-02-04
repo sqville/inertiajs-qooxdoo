@@ -67,6 +67,7 @@ qx.Class.define("qxapp.Application",
       doccomp.add(header, { edge: "north" });
       doccomp.add(tabs, { edge: "center" });
       this.getRoot().add(doccomp, { edge: 0 });
+      //this.getRoot().setBackgroundColor("red");
 
       // Show controls based on the current url
       // (see TabView for configured qxmsg listeners)

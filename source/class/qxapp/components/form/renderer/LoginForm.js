@@ -10,7 +10,7 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
 
     construct(form) {
       var layout = new qx.ui.layout.VBox();
-      layout.setSpacing(10);
+      layout.setSpacing(6);
       this._setLayout(layout);
 
       super(form);
@@ -43,19 +43,20 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
       addItems(items, names, title) {
         // add the header
         if (title != null) {
-          this._add(this._createHeader(title));
-
-          //this._row++;
+          var grouphead = this._createHeader(title);
+            this._add(this._createHeader(title));
         }
 
         // add the items
         for (var i = 0; i < items.length; i++) {
           if (names[i] != null && names[i] != "") {
             var label = this._createLabel(names[i], items[i]);
+            label.set({marginLeft : 20});
             this._add(label);
           }
 
           var item = items[i];
+          item.set({marginLeft : 20, marginRight : 20});
           this._add(item);
 
           if (label) {
@@ -80,7 +81,10 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
         if (this._buttonRow == null) {
           // create button row
           this._buttonRow = new qx.ui.container.Composite();
-          this._buttonRow.setMarginTop(5);
+          this._buttonRow.set({
+            backgroundColor : "rgb(243, 244, 246)",
+            padding : [16, 20, 16, 20]
+          });
           var hbox = new qx.ui.layout.HBox();
           hbox.setAlignX("right");
           hbox.setSpacing(5);
@@ -131,11 +135,12 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
         var header = new qx.ui.basic.Label(title);
         // store labels for disposal
         this._labels.push(header);
-        header.setFont("bold");
-        if (this._row != 0) {
-          header.setMarginTop(10);
-        }
-        header.setAlignX("left");
+        header.set({
+            font : qx.bom.Font.fromString("24px sans-serif bold"),
+            allowGrowX : true,
+            textAlign : "center",
+            margin : [30,0,30,0]
+        })
         return header;
       }
     },

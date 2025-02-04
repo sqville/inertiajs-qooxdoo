@@ -14,5 +14,17 @@ qx.Theme.define("qxapp.theme.Appearance",
 
   appearances :
   {
+    // override
+    "tabview/pane" :
+    {
+      style : function(states)
+      {
+        return {
+          backgroundColor : "background",
+          decorator : "main",
+          padding : 10
+        };
+      }
+    }
   }
 });

@@ -65,7 +65,7 @@ qx.Class.define("qxapp.pages.Organizations", {
       pageContent.add(searchCreateBar);
       pageContent.add(table);
       pageContent.add(pagination);
-      this.getChildrenContainer().add(pageContent, { edge: 0 });
+      this.getChildrenContainer().add(pageContent, { edge: 10 });
     },
 
     members: {

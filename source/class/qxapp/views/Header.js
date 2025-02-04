@@ -41,7 +41,7 @@ qx.Class.define("qxapp.views.Header", {
         irouter.get(`/users/${this.__menubutton.getUserData("userid")}/edit`, {}, {
             onSuccess : (NextPage) => {
                 if (NextPage.props.auth.user) {
-                    irouter.initqxpg(NextPage);
+                    //irouter.initqxpg(NextPage);
                     qxmsg.emit("get", NextPage.url, null, NextPage);
                 }
             }
@@ -52,7 +52,7 @@ qx.Class.define("qxapp.views.Header", {
         irouter.get('/users', {}, {
             onSuccess : (NextPage) => {
                 if (NextPage.props.auth.user) {
-                    irouter.initqxpg(NextPage);
+                    //irouter.initqxpg(NextPage);
                     qxmsg.emit("get", NextPage.url, null, NextPage);
                 }
             }

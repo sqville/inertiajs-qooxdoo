@@ -101,7 +101,7 @@ qx.Class.define("qxapp.pages.UserDetails", {
       pageContent.add(flashMessage);
       pageContent.add(breadcrumbContent);
       pageContent.add(detailsForm);
-      this.getChildrenContainer().add(pageContent, { edge: 0 });
+      this.getChildrenContainer().add(pageContent, { edge: 10 });
     },
 
     members: {

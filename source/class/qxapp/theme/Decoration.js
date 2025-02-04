@@ -14,5 +14,21 @@ qx.Theme.define("qxapp.theme.Decoration",
 
   decorations :
   {
+    "loginform" : {
+        style : {
+            width : 1,
+            color : "rgb(243, 244, 246)",
+            radius : 6
+        }
+    },
+
+    "tbmain" :
+    {
+      style :
+      {
+        width : 0,
+        color : "transparent"
+      }
+    }
   }
 });

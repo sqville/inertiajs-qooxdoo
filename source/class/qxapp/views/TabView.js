@@ -11,7 +11,15 @@ qx.Class.define("qxapp.views.TabView", {
 
     this.setBarPosition("left");
 
-    this.set({ padding: 0, margin: 0, allowStretchX: true, allowStretchY: true });
+    this.setContentPadding(0);
+
+    /*this.set({
+        contentPadding : 0,
+        padding : 0,
+        margin : 0,
+        allowStretchX : true,
+        allowStretchY : true
+    });*/
 
     this.init(irouter, qxmsg, appheader);
   },
@@ -40,6 +48,8 @@ qx.Class.define("qxapp.views.TabView", {
 
       // Login
       qxmsg.on("get", "/login", () => {
+        this.getChildControl("pane").setDecorator("tbmain");
+        //this.setContentPadding(0);
         this.getChildControl("bar").setVisibility("excluded");
         appheader.setVisibility("excluded");
         this.setSelection([login]);
@@ -106,6 +116,8 @@ qx.Class.define("qxapp.views.TabView", {
     },
 
     __authUserView(header) {
+        //this.setContentPadding([8, 0, 8, 8]);
+        this.getChildControl("pane").setDecorator("main");
         this.getChildControl("bar").setVisibility("visible");
         header.setVisibility("visible");
     },
@@ -132,7 +144,7 @@ qx.Class.define("qxapp.views.TabView", {
                 {
                     onSuccess : (NextPage) => {
                         if (NextPage.props.auth.user) {
-                            this.__irouter.initqxpg(NextPage);
+                            //this.__irouter.initqxpg(NextPage);
                             value[0].updatePageModels(NextPage);
                         }
                     }

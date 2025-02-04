@@ -140,7 +140,7 @@ qx.Class.define("qxapp.components.SearchFilter", {
             this.__irouter.get(url, {}, {
                 onSuccess : (NextPage) => {
                     if (NextPage.props.auth.user) {
-                        this.__irouter.initqxpg(NextPage);
+                        //this.__irouter.initqxpg(NextPage);
                         this.__qxmsg.emit("get", NextPage.url, null, NextPage);
                     }
                 }

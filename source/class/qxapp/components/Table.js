@@ -49,7 +49,7 @@ qx.Class.define("qxapp.components.Table", {
             irouter.get(`${pageurl}/${detailid}/edit`, {}, {
                 onSuccess : (NextPage) => {
                     if (NextPage.props.auth.user) {
-                        irouter.initqxpg(NextPage);
+                        //irouter.initqxpg(NextPage);
                         qxmsg.emit("get", NextPage.url, null, NextPage);
                     }
                 }

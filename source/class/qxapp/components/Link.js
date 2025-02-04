@@ -46,7 +46,7 @@ qx.Class.define("qxapp.components.Link", {
                         this.__irouter.get(value, {}, {
                             onSuccess : (NextPage) => {
                                 if (NextPage.props.auth.user) {
-                                    this.__irouter.initqxpg(NextPage);
+                                    //this.__irouter.initqxpg(NextPage);
                                     this.__qxmsg.emit("get", NextPage.url, null, NextPage);
                                 }
                             }

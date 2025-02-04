@@ -14,5 +14,10 @@ qx.Theme.define("qxapp.theme.Font",
 
   fonts :
   {
+    logo :
+    {
+      include : "bold",
+      size : 24
+    }
   }
 });

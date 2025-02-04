@@ -117,7 +117,7 @@ qx.Class.define("qxapp.pages.OrganizationDetails", {
       pageContent.add(detailsForm);
       pageContent.add(contactsheader);
       pageContent.add(table);
-      this.getChildrenContainer().add(pageContent, { edge: 0 });
+      this.getChildrenContainer().add(pageContent, { edge: 10 });
     },
 
     members: {

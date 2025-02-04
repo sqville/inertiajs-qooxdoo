@@ -21,7 +21,6 @@ qx.Class.define("qxapp.pages.Reports", {
       // Set up the page
       this.setLabel(pageName);
       this.addListener("appear", () => {document.title = `${pageName} - Ping CRM Qooxdoo`});
-      this.getChildrenContainer().setLayout(new qx.ui.layout.Canvas());
       this.setUserData("pageurl", pageurl);
       var pagebtnlink = this.getButton();
       pagebtnlink.getContentElement().setNodeName("a");
@@ -30,10 +29,11 @@ qx.Class.define("qxapp.pages.Reports", {
       pagebtnlink.setNativeContextMenu(true);
 
       // add controls to the page
+      this.getChildrenContainer().setLayout(new qx.ui.layout.Canvas());
       var pageContent = new qx.ui.container.Composite();
       pageContent.setLayout(new qx.ui.layout.VBox(10));
       pageContent.add(new qx.ui.basic.Label(pageName));
-      this.getChildrenContainer().add(pageContent, { edge: 0 });
+      this.getChildrenContainer().add(pageContent, { edge: 10 });
     },
 
     members: {

@@ -23,7 +23,7 @@ qx.Class.define("qxapp.components.SubmitButton", {
                         irouter.post(pageurl, formdataobj,
                             { onSuccess : (NextPage) => {
                                 if (NextPage.props.auth.user) {
-                                    irouter.initqxpg(NextPage);
+                                    //irouter.initqxpg(NextPage);
                                     qxmsg.emit("get", NextPage.url, null, NextPage);
                                 }
                             },

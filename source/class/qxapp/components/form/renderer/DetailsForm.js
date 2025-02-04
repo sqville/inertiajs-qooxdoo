@@ -9,18 +9,13 @@ qx.Class.define("qxapp.components.form.renderer.DetailsForm", {
     extend: qx.ui.form.renderer.AbstractRenderer,
 
     construct(form) {
-      //var layout = new qx.ui.layout.VBox();
-      //layout.setSpacing(8);
-      //this._setLayout(layout);
 
       var layout = new qx.ui.layout.Flow();
-      layout.setAlignX("left"); // Align children to the X axis of the container (left|center|right)
-      //fl.setReversed( true ); // draws children elements in reverse order.
+      // Align children to the X axis of the container (left|center|right)
+      layout.setAlignX("left");
       layout.setSpacingX(10);
       layout.setSpacingY(10);
-
       this._setLayout(layout);
-
 
       super(form);
     },
@@ -53,8 +48,6 @@ qx.Class.define("qxapp.components.form.renderer.DetailsForm", {
         // add the header
         if (title != null) {
           this._add(this._createHeader(title));
-
-          //this._row++;
         }
 
         // add items Flow
@@ -107,12 +100,7 @@ qx.Class.define("qxapp.components.form.renderer.DetailsForm", {
           this._buttonRow.setLayout(hbox);
           // add the button row
           this._add(this._buttonRow, { lineBreak : true });
-          // increase the row
-          //this._row++;
         }
-
-        // create button wrapper
-        //var buttonwrapper = new qx.ui.container.Composite();
 
         if (customize) {
             if (customize.position) {
@@ -125,9 +113,6 @@ qx.Class.define("qxapp.components.form.renderer.DetailsForm", {
         } else {
             this._buttonRow.add(button);
         }
-
-        // add the button
-        //this._buttonRow.add(button);
       },
 
       /**
