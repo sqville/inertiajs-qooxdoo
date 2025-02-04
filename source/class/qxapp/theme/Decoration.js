@@ -29,6 +29,29 @@ qx.Theme.define("qxapp.theme.Decoration",
         width : 0,
         color : "transparent"
       }
-    }
+    },
+
+    "ping-button-box": {
+      style: {
+        radius: 6,
+        width: 0
+      }
+    },
+
+    textfield: {
+        style: {
+          width : 1,
+          color : "rgb(229, 231, 235)",
+          radius : 6
+        }
+      },
+
+      "textfield-focused": {
+        style: {
+          width : 2,
+          color : "rgb(120, 134, 215)",
+          radius : 6
+        }
+      }
   }
 });

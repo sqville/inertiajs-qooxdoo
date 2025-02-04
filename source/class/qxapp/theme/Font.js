@@ -14,10 +14,22 @@ qx.Theme.define("qxapp.theme.Font",
 
   fonts :
   {
-    logo :
-    {
-      include : "bold",
-      size : 24
+    loginlabel : {
+        size: 14,
+        fontName: "qx.theme.indigo.defaultFont",
+        color: "font",
+        lineHeight: 1.8
+    },
+
+    logintxtfield : {
+        include : "loginlabel",
+        size : 15
+    },
+
+    loginbutton : {
+        include : "loginlabel",
+        bold : true,
+        color : "white"
     }
   }
 });

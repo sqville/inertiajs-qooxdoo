@@ -51,12 +51,12 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
         for (var i = 0; i < items.length; i++) {
           if (names[i] != null && names[i] != "") {
             var label = this._createLabel(names[i], items[i]);
-            label.set({marginLeft : 20});
+            label.set({marginLeft : 40});
             this._add(label);
           }
 
           var item = items[i];
-          item.set({marginLeft : 20, marginRight : 20});
+          item.set({marginLeft : 40, marginRight : 40});
           this._add(item);
 
           if (label) {
@@ -83,7 +83,7 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
           this._buttonRow = new qx.ui.container.Composite();
           this._buttonRow.set({
             backgroundColor : "rgb(243, 244, 246)",
-            padding : [16, 20, 16, 20]
+            padding : [18, 40, 18, 40]
           });
           var hbox = new qx.ui.layout.HBox();
           hbox.setAlignX("right");
@@ -118,6 +118,7 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
        */
       _createLabel(name, item) {
         var label = new qx.ui.basic.Label(this._createLabelText(name, item));
+        label.setFont("loginlabel");
         // store labels for disposal
         this._labels.push(label);
         label.setRich(true);
@@ -136,10 +137,11 @@ qx.Class.define("qxapp.components.form.renderer.LoginForm", {
         // store labels for disposal
         this._labels.push(header);
         header.set({
-            font : qx.bom.Font.fromString("24px sans-serif bold"),
+            font : qx.bom.Font.fromString("30px sans-serif bold"),
             allowGrowX : true,
             textAlign : "center",
-            margin : [30,0,30,0]
+            textColor : "#374151",
+            margin : [40,0,50,0]
         })
         return header;
       }
