@@ -51,14 +51,12 @@ qx.Class.define("qxapp.pages.Login", {
         // Username
         var txtusername = new qx.ui.form.TextField().set({ appearance : "ping-textfield", required : true, marginBottom : 20, font : "logintxtfield" });
         txtusername.setPlaceholder("User name");
-        //txtusername.setMaxWidth(150);
         txtusername.setValue("johndoe@example.com");
         form.add(txtusername, "Email", qx.util.Validate.email());
 
         // Password
         var txtpassword = new qx.ui.form.PasswordField().set({ appearance : "ping-textfield", required : true, marginBottom : 20, font : "logintxtfield" });
         txtpassword.setPlaceholder("Password");
-        //txtusername.setMaxWidth(150);
         txtpassword.setValue("secret");
         form.add(txtpassword, "Password");
 

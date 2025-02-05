@@ -8,9 +8,17 @@
 
 ************************************************************************ */
 
+/**
+ * @require(qxapp.theme.MOutline)
+ */
+
 qx.Theme.define("qxapp.theme.Appearance",
 {
   extend : qx.theme.indigo.Appearance,
+
+  boot : function () {
+    qx.Class.include(qx.ui.core.Widget, qxapp.theme.MOutline);
+  },
 
   appearances :
   {
@@ -53,20 +61,12 @@ qx.Theme.define("qxapp.theme.Appearance",
       "ping-textfield" : {
         style(states) {
 
-          var decorator;
-          var padding;
-          if (states.focused) {
-            decorator = "textfield-focused";
-            padding = 6;
-          } else {
-            padding = 7;
-            decorator = "textfield";
-          }
-
           return {
-            decorator: decorator,
-            padding: padding,
-            backgroundColor: "white"
+            decorator : states.focused ? "textfield-focused" : "textfield",
+            padding : states.focused ? 6 : 7,
+            backgroundColor : "white",
+            outline : states.focused ? "2px solid rgba(38, 0, 255, .3)" : "none",
+            outlineOffset : "1px"
           };
         }
       },

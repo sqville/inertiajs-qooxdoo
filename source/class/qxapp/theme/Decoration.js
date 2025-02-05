@@ -49,7 +49,7 @@ qx.Theme.define("qxapp.theme.Decoration",
       "textfield-focused": {
         style: {
           width : 2,
-          color : "rgb(120, 134, 215)",
+          color : "blue",
           radius : 6
         }
       }
