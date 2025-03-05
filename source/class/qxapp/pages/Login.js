@@ -94,6 +94,7 @@ qx.Class.define("qxapp.pages.Login", {
         var layout = new qx.ui.layout.Flow();
         // Align children to the X axis of the container (left|center|right)
         layout.setAlignX("center");
+        layout.setAlignY("middle");
         layout.setSpacingX(0);
         layout.setSpacingY(10);
         this.getChildrenContainer().setLayout(layout);

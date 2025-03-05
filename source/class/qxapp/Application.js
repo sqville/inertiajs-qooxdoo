@@ -45,6 +45,7 @@ qx.Class.define("qxapp.Application",
         qx.log.appender.Console;
       }
 
+      // patch Form so we can enable
       qx.Class.patch(qx.ui.form.Form, qxapp.components.form.MFormDataChange);
 
       // Create Qooxdoo Inertia; Get the inital page json; Initiate the router
@@ -67,7 +68,6 @@ qx.Class.define("qxapp.Application",
       doccomp.add(header, { edge: "north" });
       doccomp.add(tabs, { edge: "center" });
       this.getRoot().add(doccomp, { edge: 0 });
-      //this.getRoot().setBackgroundColor("red");
 
       // Show controls based on the current url
       // (see TabView for configured qxmsg listeners)
@@ -84,13 +84,14 @@ qx.Class.define("qxapp.Application",
     {
         // require inertiajs core library
         var inertia = require('@inertiajs/core');
+        //var inertia = require('inertiav2');
 
         // add a qooxdoo friendly function for sending and processing requests
         inertia.router.initqxpg = function (nextpage) {
             this.init({
                 initialPage: nextpage,
                 resolveComponent: () => {},
-                swapComponent: () => {return new qx.Promise.resolve({})}
+                swapComponent: () => {return qx.Promise.resolve()}
             })
         };
 

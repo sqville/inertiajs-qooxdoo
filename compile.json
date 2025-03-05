@@ -16,6 +16,11 @@
       "qx.icontheme": "Tango",
       "qx.nativeScrollBars": true
   },
+  "babel": {
+    "options": {
+        "targets": "last 1 version, > 1%, maintained node versions, not dead"
+    }
+  },
   "applications": [
     {
       "class": "qxapp.Application",
