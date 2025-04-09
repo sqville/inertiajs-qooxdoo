@@ -24,6 +24,15 @@ qx.Class.define("qxapp.pages.Contacts", {
       // Flash Messages
       var flashMessage = this._flashmessages = new qxapp.components.FlashMessages();
 
+      // Page Header with Tailwindcss classes
+      var pageHeader = new qx.ui.basic.Label(pageName);
+      /*pageHeader.addListener("appear", () => {
+        pageHeader.getContentElement().removeAllClasses();
+        pageHeader.getContentElement().setAttribute("style", "", true);
+        pageHeader.getContentElement().removeAttribute("style", true);
+        pageHeader.getContentElement().addClass("mb-8 text-3xl font-bold");
+      });*/
+
       // Search Filter
       var searchFilter = this._searchFilter = new qxapp.components.SearchFilter(irouter, qxmsg, pageurl);
 
@@ -61,7 +70,7 @@ qx.Class.define("qxapp.pages.Contacts", {
       var pageContent = new qx.ui.container.Composite();
       pageContent.setLayout(new qx.ui.layout.VBox(10));
       pageContent.add(flashMessage);
-      pageContent.add(new qx.ui.basic.Label(pageName));
+      pageContent.add(pageHeader);
       pageContent.add(searchCreateBar);
       pageContent.add(table);
       pageContent.add(pagination);

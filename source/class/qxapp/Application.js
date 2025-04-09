@@ -11,7 +11,7 @@
 /**
  * This is the main application class of "qxapp"
  *
- * @asset(qxapp/*)
+ * @external(qxapp/qxapp.css)
  */
 qx.Class.define("qxapp.Application",
 {
@@ -48,6 +48,14 @@ qx.Class.define("qxapp.Application",
       // patch Form so we can enable
       qx.Class.patch(qx.ui.form.Form, qxapp.components.form.MFormDataChange);
 
+      if (qx.core.Environment.get("ville.theme.css")) {
+        qx.Class.include(qx.ui.core.LayoutItem, qxapp.exp.MControl);
+        qx.Class.patch(qx.html.Label, qxapp.exp.MLabel);
+        //qx.Class.patch(qx.ui.core.Widget, qxapp.exp.MWidget);
+        //qx.Class.patch(qx.ui.form.AbstractField, qxapp.exp.MAbstractField);
+        qx.Class.include(qx.ui.core.Widget, qxapp.exp.MCssUtilityClass);
+      }
+
       // Create Qooxdoo Inertia; Get the inital page json; Initiate the router
       const Inertia = this.createInertia();
       const InitialPage = JSON.parse(document.getElementById('app').dataset.page);
@@ -58,13 +66,23 @@ qx.Class.define("qxapp.Application",
 
       // Header
       var header = new qxapp.views.Header(Inertia.router, qxmsg);
+      header.setCssUtilityClass("md:flex md:shrink-0");
+      header.setExcludeFromLayout(true);
+      header.setCssUtilityStyleClearAll(true);
 
       // TabView
       var tabs = new qxapp.views.TabView(Inertia.router, qxmsg, header);
+      tabs.setCssUtilityClass("md:flex md:grow md:overflow-hidden");
+      tabs.setExcludeFromLayout(true);
+      tabs.setCssUtilityStyleClearAll(true);
 
       // Setup the app layout and add the views
       var dockLayout = new qx.ui.layout.Dock().set({sort: "x"});
       var doccomp = new qx.ui.container.Composite(dockLayout);
+      //doccomp.setCssUtilityClass("w-full max-w-md");
+      doccomp.setCssUtilityClass("md:flex md:flex-col md:h-screen");
+      doccomp.setCssUtilityStyleClearAll(true);
+      doccomp.setExcludeFromLayout(true);
       doccomp.add(header, { edge: "north" });
       doccomp.add(tabs, { edge: "center" });
       this.getRoot().add(doccomp, { edge: 0 });
@@ -84,7 +102,6 @@ qx.Class.define("qxapp.Application",
     {
         // require inertiajs core library
         var inertia = require('@inertiajs/core');
-        //var inertia = require('inertiav2');
 
         // add a qooxdoo friendly function for sending and processing requests
         inertia.router.initqxpg = function (nextpage) {

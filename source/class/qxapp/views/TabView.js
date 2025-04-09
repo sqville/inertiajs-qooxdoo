@@ -40,7 +40,7 @@ qx.Class.define("qxapp.views.TabView", {
 
       // Login
       qxmsg.on("get", "/login", () => {
-        this.getChildControl("pane").setDecorator("tbmain");
+        //this.getChildControl("pane").setDecorator("tbmain");
         this.getChildControl("bar").setVisibility("excluded");
         appheader.setVisibility("excluded");
         this.setSelection([login]);

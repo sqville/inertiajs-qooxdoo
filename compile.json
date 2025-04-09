@@ -14,7 +14,8 @@
   "locales": ["en"],
   "environment": {
       "qx.icontheme": "Tango",
-      "qx.nativeScrollBars": true
+      "qx.nativeScrollBars": true,
+      "ville.theme.css": true
   },
   "babel": {
     "options": {

@@ -10,18 +10,17 @@
 
 /**
  * @require(qxapp.theme.MOutline)
+ * @require(qxapp.theme.MWidget)
  */
 
 qx.Theme.define("qxapp.theme.Appearance",
 {
   extend : qx.theme.indigo.Appearance,
 
-  boot : function () {
-    qx.Class.include(qx.ui.core.Widget, qxapp.theme.MOutline);
-  },
-
   appearances :
   {
+
+    root: {},
 
     /*
     ---------------------------------------------------------------------------
@@ -46,13 +45,15 @@ qx.Theme.define("qxapp.theme.Appearance",
         }
       },
 
+      "ping-exp-button": {},
+
       "ping-button/label": {
         alias: "atom/label",
 
         style(states) {
           return {
-            font: "loginbutton",
-            textColor : "white"
+            font: null,
+            textColor : null
           };
         }
       },
@@ -64,12 +65,12 @@ qx.Theme.define("qxapp.theme.Appearance",
           return {
             decorator : states.focused ? "textfield-focused" : "textfield",
             padding : states.focused ? 6 : 7,
-            backgroundColor : "white",
-            outline : states.focused ? "2px solid rgba(38, 0, 255, .3)" : "none",
-            outlineOffset : "1px"
+            backgroundColor : "white"
           };
         }
       },
+
+      "ping-exp-textfield" : {},
 
 
     // override

@@ -14,7 +14,7 @@ qx.Theme.define("qxapp.theme.Font",
 
   fonts :
   {
-    loginlabel : {
+    /*loginlabel : {
         size: 14,
         fontName: "qx.theme.indigo.defaultFont",
         color: "font",
@@ -30,6 +30,6 @@ qx.Theme.define("qxapp.theme.Font",
         include : "loginlabel",
         bold : true,
         color : "white"
-    }
+    }*/
   }
 });
