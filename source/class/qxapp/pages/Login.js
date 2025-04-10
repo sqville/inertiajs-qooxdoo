@@ -104,7 +104,9 @@ qx.Class.define("qxapp.pages.Login", {
         loginbutton.setCssUtilityClass("flex items-center btn-indigo ml-auto");
         loginbutton.setCssUtilityStyle(["position"]);
         var btnlabel = loginbutton.getChildControl("label");
-        btnlabel.setCssUtilityStyle(["position"]);
+        //btnlabel.setCssUtilityStyle(["position"]);
+        btnlabel.setExcludeFromLayout(true);
+        btnlabel.setCssUtilityStyleClearAll(true);
         loginbutton.setExcludeFromLayout(true);
         loginbutton.addListener("execute", () => {
             if (form.validate()) {

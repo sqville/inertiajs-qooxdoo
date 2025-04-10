@@ -73,8 +73,8 @@ qx.Class.define("qxapp.Application",
       // TabView
       var tabs = new qxapp.views.TabView(Inertia.router, qxmsg, header);
       tabs.setCssUtilityClass("md:flex md:grow md:overflow-hidden");
-      tabs.setExcludeFromLayout(true);
-      tabs.setCssUtilityStyleClearAll(true);
+      //tabs.setExcludeFromLayout(true);
+      //tabs.setCssUtilityStyleClearAll(true);
 
       // Setup the app layout and add the views
       var dockLayout = new qx.ui.layout.Dock().set({sort: "x"});

@@ -39,9 +39,22 @@ qx.Class.define("qxapp.views.Header", {
 
     // Logged in users Organization
     this.__orglabel = new qx.ui.basic.Label("Org Name");
+    this.__orglabel.setCssUtilityClass("mr-4 mt-1");
+    this.__orglabel.setExcludeFromLayout(true);
+    this.__orglabel.setCssUtilityStyleClearAll(true);
 
     // Logged in users Full name
-    var menuButton = new qx.ui.toolbar.MenuButton("Full Name");
+    //var menuButton = new qx.ui.toolbar.MenuButton("Full Name").set({ appearance : "ping-exp-button" });
+    var menuButton = new qx.ui.form.MenuButton("Full Name").set({ show: "label" });
+    menuButton.setCssUtilityClass("mt-1");
+    menuButton.setExcludeFromLayout(true);
+    //menuButton.setCssUtilityStyle(["overflowX", "overflowY"]);
+    //menuButton.setCssUtilityStyle(["position"]);
+    menuButton.setCssUtilityStyleClearAll(true);
+    var menubtnlbl = menuButton.getChildControl("label");
+    menubtnlbl.setExcludeFromLayout(true);
+    menubtnlbl.setCssUtilityStyleClearAll(true);
+
 
     // Menu and MenuButton
     var menu = new qx.ui.menu.Menu;
@@ -85,12 +98,24 @@ qx.Class.define("qxapp.views.Header", {
         });
       }, this);
 
-    // Finally assemble header
+    /* OLD - Finally assemble header
     this.add(title);
     this.add(new qx.ui.core.Spacer(), { flex: 1 });
     this.add(this.__orglabel);
     this.add(new qx.ui.core.Spacer(), { flex: 1 });
     this.add(menuButton);
+    */
+
+    // NEW
+    this.add(title);
+    var headerrt = new qx.ui.container.Composite(new qx.ui.layout.HBox(0));
+    headerrt.setCssUtilityClass("md:text-md flex items-center justify-between p-4 w-full text-sm bg-white border-b md:px-12 md:py-0");
+    headerrt.setExcludeFromLayout(true);
+    headerrt.setCssUtilityStyleClearAll(true);
+    headerrt.add(this.__orglabel);
+    headerrt.add(menuButton);
+    this.add(headerrt);
+
   },
 
   members: {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies
-npx tailwindcss -i ./source/resource/qxapp/css/app.css -o ./source/resource/qxapp.css
+npx tailwindcss -c tailwind.config.js -i ./source/resource/qxapp/css/app.css -o ./source/resource/qxapp/qxapp.css
 
 # Build the project
 echo "Cleaning..."
